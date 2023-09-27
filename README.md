@@ -1,79 +1,75 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>README - API RESTful Spring Boot</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 20px;
-        }
-        h1 {
-            color: #333;
-        }
-        p {
-            color: #666;
-        }
-        .code-block {
-            background-color: #f5f5f5;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-    </style>
-</head>
-<body>
-    <h1>API RESTful Spring Boot com Swagger</h1>
-    
-    <p>Este é um projeto de exemplo que demonstra como criar uma API RESTful usando Spring Boot e documentá-la com o Swagger.</p>
+# API RESTful de Gerenciamento de Usuários
 
-    <h2>Endpoints da API:</h2>
-    
-    <p>A API oferece os seguintes endpoints:</p>
-    
-    <div class="code-block">
-        <p><strong>Criar um usuário:</strong></p>
-        <code>POST /api/usuarios</code>
-    </div>
+Esta é uma API RESTful desenvolvida com Spring Boot que permite a criação, visualização e exclusão de usuários. Ela utiliza o Swagger para documentação e é escrita em Java.
 
-    <div class="code-block">
-        <p><strong>Visualizar um usuário:</strong></p>
-        <code>GET /api/usuarios/{id}</code>
-    </div>
+## Requisitos
 
-    <div class="code-block">
-        <p><strong>Excluir um usuário:</strong></p>
-        <code>DELETE /api/usuarios/{id}</code>
-    </div>
+Certifique-se de que você possui as seguintes ferramentas instaladas em seu ambiente de desenvolvimento:
 
-    <h2>Documentação com Swagger:</h2>
+- Java Development Kit (JDK) 11 ou superior
+- Spring Boot
+- Maven
+- Um cliente API, como o Postman, para testar as operações
 
-    <p>A documentação da API pode ser acessada através do Swagger. Basta iniciar a aplicação e acessar a seguinte URL no seu navegador:</p>
+Documentação Swagger
 
-    <code>/swagger-ui.html</code>
+Você pode acessar a documentação da API utilizando o Swagger. Abra o navegador e acesse:
 
-    <p>Lá você encontrará informações detalhadas sobre os endpoints, como usá-los e testá-los.</p>
+bash
 
-    <h2>Executando o projeto:</h2>
-    
-    <p>Para executar o projeto, siga estas etapas:</p>
-    
-    <ol>
-        <li>Clone o repositório</li>
-        <li>Abra o projeto em sua IDE favorita</li>
-        <li>Execute a aplicação Spring Boot</li>
-        <li>Acesse a documentação Swagger em <code>/swagger-ui.html</code></li>
-    </ol>
+http://localhost:8080/swagger-ui.html
 
-    <p>Agora você pode começar a usar a API para criar, visualizar e excluir usuários!</p>
+Isso exibirá a interface Swagger, onde você pode explorar e testar as operações da API.
+Endpoints
 
-    <h2>Contribuindo:</h2>
-    
-    <p>Se desejar contribuir para este projeto, sinta-se à vontade para fazer um fork do repositório e enviar pull requests com melhorias.</p>
+A API possui os seguintes endpoints:
 
-    <h2>Licença:</h2>
-    
-    <p>Este projeto é licenciado sob a MIT License. Consulte o arquivo <code>LICENSE</code> para obter mais detalhes.</p>
-</body>
-</html>
+    POST /api/usuarios: Crie um novo usuário enviando um JSON com os dados do usuário.
+    GET /api/usuarios: Obtenha a lista de todos os usuários cadastrados.
+    GET /api/usuarios/{id}: Obtenha os detalhes de um usuário específico pelo seu ID.
+    DELETE /api/usuarios/{id}: Exclua um usuário pelo seu ID.
+
+Exemplo de Requisições
+
+Aqui estão alguns exemplos de como usar a API com o cliente API:
+
+    Criar um novo usuário:
+
+    http
+
+POST http://localhost:8080/api/usuarios
+Content-Type: application/json
+
+{
+  "nome": "João Silva",
+  "email": "joao@example.com"
+}
+
+Obter a lista de todos os usuários:
+
+http
+
+GET http://localhost:8080/api/usuarios
+
+Obter os detalhes de um usuário específico (substitua {id} pelo ID real do usuário):
+
+http
+
+GET http://localhost:8080/api/usuarios/{id}
+
+Excluir um usuário específico (substitua {id} pelo ID real do usuário):
+
+http
+
+    DELETE http://localhost:8080/api/usuarios/{id}
+
+Lembre-se de que este é um exemplo simples e que você pode personalizar e expandir a API de acordo com suas necessidades.
+Contribuindo
+
+Sinta-se à vontade para contribuir com melhorias, relatar problemas ou adicionar recursos à API. Abra uma issue ou envie um pull request com suas alterações.
+Licença
+
+Este projeto está licenciado sob a Licença MIT. Consulte o arquivo LICENSE para obter detalhes.
+
+
+
